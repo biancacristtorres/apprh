@@ -16,25 +16,6 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { NotificationsProvider } from '../providers/notifications/notifications';
 
-// Import the AF2 Moduled
-// import { AngularFireModule } from 'angularfire2';
-// import { AngularFireDatabaseModule, AngularFireDatabase  } from 'angularfire2/database';
-
-//Observable
-// import {Observable} from 'rxjs/Observable';
-
-
-//MEU FIREBASE CORRETO
-// AF2 Settings
-// export const firebaseConfig = {
-//   apiKey: "AIzaSyDIxGSP08E7zQKHrY8C-NlL-ewFNNRZdXo",
-//   authDomain: "apprh-6398d.firebaseapp.com",
-//   databaseURL: "https://apprh-6398d.firebaseio.com",
-//   projectId: "apprh-6398d",
-//   storageBucket: "apprh-6398d.appspot.com",
-//   messagingSenderId: "580542217812"
-// };
-
 @NgModule({
   declarations: [
     MyApp,

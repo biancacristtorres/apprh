@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
-// import { AngularFireDatabase, FirebaseListObservable } from "angularfire2/database";
-// import { AngularFireDatabase, FirebaseListObservable } from "angularfire2/database-deprecated"; 
-import { AngularFireDatabaseModule, AngularFireDatabase  } from 'angularfire2/database';
-//import { AngularFireList } from 'angularfire2/database';
+import { IonicPage, NavController, ToastController } from 'ionic-angular';
 import { NotificationsProvider } from './../../providers/notifications/notifications';
 import { Observable } from 'rxjs/Observable';
 

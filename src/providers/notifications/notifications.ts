@@ -12,22 +12,20 @@ import { AngularFireDatabase } from 'angularfire2/database';
 export class NotificationsProvider {
 
   private PATH = '/notifications';
-
+  
   constructor(private db: AngularFireDatabase) {
   }
 
   getAll() {
-    return this.db.list(this.PATH, ref => ref.orderByChild('title'))
-      .snapshotChanges()
-      .map(changes => {
-        return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
-      })
+    return this.db.list(this.PATH).snapshotChanges().map(changes => {
+        return changes.map(itens => ({ key: itens.payload.key, ...itens.payload.val() }));
+      });
   }
 
   get(key: string) {
     return this.db.object(this.PATH + key).snapshotChanges()
-      .map(c => {
-        return { key: c.key, ...c.payload.val() };
+      .map(itens => {
+        return { key: itens.key, ...itens.payload.val() };
       });
   }
 

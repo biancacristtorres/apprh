@@ -7,7 +7,7 @@
 <ion-header>
 
     <ion-navbar>
-        <ion-title>notifications</ion-title>
+        <ion-title>Notifications</ion-title>
     </ion-navbar>
 
 </ion-header>
@@ -15,11 +15,26 @@
 
 <ion-content padding>
     <ion-list>
-        <ion-item *ngFor="let notification of lista | async">
-            <h2>{{notification.title}}</h2>
-            <h3>{{notification.from}}</h3>
-            <h3>{{notification.data}}</h3>
-            <!-- <ion-note item-right *ngIf="carro.multa === 'true'">Tem multa</ion-note> -->
-        </ion-item>
+        <ion-item-sliding *ngFor="let notification of notifications | async">
+            <ion-item>
+                <h1>{{ notifications.title }}</h1>
+                <p>{{ notifications.from }}</p>
+                <p>{{ notifications.date }}</p>
+            </ion-item>
+            <ion-item-options side="left">
+                <button ion-button color="secondary" (click)="editNotification(notification)">
+          <ion-icon name="create"></ion-icon>
+        </button>
+                <button ion-button color="danger" (click)="removeNotification(notification.key)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+            </ion-item-options>
+        </ion-item-sliding>
     </ion-list>
+
+    <ion-fab bottom right>
+        <button ion-fab color="primary" (click)="newNotification()">
+            <ion-icon name="add"></ion-icon>
+        </button>
+    </ion-fab>
 </ion-content>
